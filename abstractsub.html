@@ -23,16 +23,10 @@
 		<li><a href="projectsub.html">Project Submission</a></li>
 		<li><a href="viewsub.html">View Submission</a></li>
 		<li><a href="faq.html">FAQ</a></li> &nbsp &nbsp &nbsp
-	    <li> 													<!--ADD SEACH ICON-->
-        <input type="text" placeholder="SEARCH" id="autocomplete-input" class="autocomplete gray-text center-right" > 
-                  </li>      
-      </ul>
+	  </ul>
 
       <ul id="nav-mobile" class="sidenav">
-	  <li> 													<!--ADD SEACH ICON-->
-        <input type="text" placeholder="SEARCH" id="autocomplete-input" class="autocomplete gray-text center-right" > 
-                  </li>      
-        <li><a href="homepage.html">Home</a></li>
+	    <li><a href="index.html">Home</a></li>
 		<li><a href="abstractsub.html">Abstract Submission</a></li>
 		<li><a href="projectsub.html">Project Submission</a></li>
 		<li><a href="viewsub.html">View Submission</a></li>
@@ -46,23 +40,58 @@
 
 <!--Code for form-->
   <br> <br>
-  <div class="container #263238 blue-grey darken-4 white-text z-depth-5" style="padding: 15px" >
+  <div class="container #263238 blue-grey darken-4 white-text z-depth-5" >
   <div class = "row">
          <form class = "col s12" action="abstractsub.php" method="get">
             <div class = "row"> 
-			<h4><center><b> <i> Kindly upload your project abstract </b> </i></h4> <br>
+			<h4><center><b> <i> Kindly upload your project abstract </b> </i></h4> 
+			<center><p> <i> <b>Kindly note: </b> Abstract once uploaded, can not be deleted or modified. </i> </p>
             
                <div class = "input-field col s12 m6 ">
                    <i class = "material-icons prefix">account_circle</i>
                   <input id = "fname"  name="fname" type = "text" class = "active validate white-text " required />
-                  <label for = "fname">Enter your full name</label>
+                  <label for = "fname">Enter the full name of team member 1</label>
                 </div>
                
                <div class = "input-field col s12 m6">      
                   <i class = "material-icons prefix">email</i>
-                  <input id = "email" name="email" type = "email"
+                  <input id = "femail" name="femail" type = "email"
+                     class = "validate white-text " required>
+                  <label for = "femail">Enter the somaiya email address of team member 1</label>
+               				  
+               </div>
+            </div>
+			
+			<div class = "row"> 
+			
+               <div class = "input-field col s12 m6 ">
+                   <i class = "material-icons prefix">account_circle</i>
+                  <input id = "sname"  name="sname" type = "text" class = "active validate white-text " />
+                  <label for = "sname">Enter the full name  of team member 2</label>
+                </div>
+               
+               <div class = "input-field col s12 m6">      
+                  <i class = "material-icons prefix">email</i>
+                  <input id = "semail" name="semail" type = "email"
                      class = "validate white-text ">
-                  <label for = "email">Enter your somaiya email address</label>
+                  <label for = "semail">Enter the somaiya email address of team member 2</label>
+               				  
+               </div>
+            </div>
+			
+			
+			<div class = "row"> 
+			   <div class = "input-field col s12 m6 ">
+                   <i class = "material-icons prefix">account_circle</i>
+                  <input id = "tname"  name="tname" type = "text" class = "active validate white-text " />
+                  <label for = "tname">Enter the full name of team member 3</label>
+                </div>
+               
+               <div class = "input-field col s12 m6">      
+                  <i class = "material-icons prefix">email</i>
+                  <input id = "temail" name="temail" type = "email"
+                     class = "validate white-text ">
+                  <label for = "temail">Enter the somaiya email address of team member 3</label>
                				  
                </div>
             </div>
@@ -70,25 +99,37 @@
             <div class = "row">
                <div class = "input-field col s12 m4">
                   <i class="material-icons prefix">phone</i>
-          <input id="contactno" name="contactno" type="tel" class="validate white-text " >
-          <label for="contactno">Contact number</label>  </div> 
+          <input id="fcontactno" name="fcontactno" type="tel" class="validate white-text " >
+          <label for="fcontactno">Contact number 1</label>  </div> 
                
+			   <div class = "input-field col s12 m4">
+                  <i class="material-icons prefix">phone</i>
+          <input id="scontactno" name="scontactno" type="tel" class="validate white-text " >
+          <label for="scontactno">Contact number 2</label>  </div> 
+		  
+		  <div class = "input-field col s12 m4">
+                  <i class="material-icons prefix">phone</i>
+          <input id="tcontactno" name="tcontactno" type="tel" class="validate white-text " >
+          <label for="tcontactno">Contact number 3</label>  </div> 
+		  
+		  </div>
 			   
-			   <div class="input-field col s12 m4 white-text">
-			    <select id="accyear" name="accyear">
+			    <div class = "row">
+			   <div class="input-field col s12 m6 white-text" style=" background color: black">
+			    <select id="accyear" name="accyear"  class="browser-default" >
       <option value="" disabled selected>Choose your academic year</option>
-      <option value="1">2017-2018</option>
-      <option value="2">2018-2019</option>
-      <option value="3" disabled >2019-2020</option>
+      <option value="1">2018-2019</option>
+      <option value="2" >2019-2020</option>
     </select>
-    <label>Choose your academic year</label>
-			   </div>
+    		   </div>
 			   
 			   
                
-		<div class="input-field col s12 m4 white-text">
-    <select id="under" name="under" >
-      <optgroup label="Departmental" selected>
+		<div class="input-field col s12 m6 ">
+    <select id="under" name="under"  class="browser-default">
+   <option value="" disabled selected>This project comes under</option>     
+	 <optgroup label="Departmental" selected>
+	 
         <option value="1" >IT</option>
         <option value="2">CS</option>
 		<option value="3">EXTC</option>
@@ -109,23 +150,31 @@
 		
       </optgroup>
     </select>
-    <label>This project comes under</label>
+  
   </div></div>
            
 		   
 			
             <div class = "row">
-               <div class = "input-field col s12">
+               <div class = "input-field col s12 m7">
                   <i class = "material-icons prefix">mode_edit</i>
-                 <input id="prob_stmt" name="prob_stmt" type="text" class="validate white-text " data-length="120">
+                 <input id="prob_stmt" name="prob_stmt" type="text" class="white-text " data-length="120">
           <label for="prob_stmt">Enter your problem statement</label>
                </div>
+			   
+			   <div class = "input-field col s12 m5">
+                  <i class = "material-icons prefix">mode_edit</i>
+                 <input id="domain" name="domain" type="text" class="white-text ">
+          <label for="domain">Enter the domain you'd be working on:</label>
+               </div>
+			   
+			   
             </div>
             
             <div class = "row">
                <div class = "input-field col s12 white-text">
 			    <i class = "material-icons prefix">mode_edit</i>
-                 <textarea id="abs" name="abs" class="materialize-textarea" data-length="1200"></textarea>
+                 <textarea id="abs" name="abs" class="materialize-textarea white-text" data-length="1200"></textarea>
           <label for="abs">Enter your abstract</label>
                </div>
             </div>
@@ -181,12 +230,11 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-<script>
-
-  $(document).ready(function(){
-    $('select').formSelect();
-  });
   
+<script>
+$(document).ready(function() {
+    $('select').material_select();
+});
   
   
    $('#abs').val('');

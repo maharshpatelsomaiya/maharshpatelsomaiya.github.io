@@ -1,7 +1,7 @@
 <?php
 	$servername = "localhost";
 	$username = "root";
-	$password = "root";
+	$password = "";
 	$dbname = "learnanintern";
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	if ($conn->connect_error) {

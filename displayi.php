@@ -7,7 +7,7 @@ $dbname = "learnanintern";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-$sql = "select * from (SELECT *FROM abstractsub ORDER BY year desc) T where Branch='IT'";
+$sql = "select * from (SELECT *FROM abstractsub ORDER BY accyear desc) T where under='1'";
 $result = $conn->query($sql);
 ?>
 
@@ -37,63 +37,33 @@ $result = $conn->query($sql);
       margin:auto;
 
     }
-    .carousel
-    {
-      max-height: 100% !important;
-    }
-    .col
-    {
-      opacity: 0.9;
-    }
-    .col:hover
-    {
-      opacity:1;
-    }  
-    .title
-    {
-      max-width: 100%;
-      background-color: green;
-      height: 300px;
-    }
-    .img
-    {
-      width: 100px;
-      height: 100px;
-    }
-    .block2
-    {
-      max-width: 92%;
-      margin: auto;
-    }
-  </style>
+.collapsible-body
+{
+	background-color: #0d2142;
+	color: white;
+	font-size: 20px;
+}
+	</style>
 </head>
 <body class="white">
 
 <!--Navigation bar -->
   <nav class="white" role="navigation" style="box-shadow: none;">
     <div class="nav-wrapper container"> 
-      <!--<a id="logo-container" href="#" class="brand-logo">Logo</a>-->
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
     <li><a href="abstractsub.html">Abstract Submission</a></li>
     <li><a href="projectsub.html">Project Submission</a></li>
     <li><a href="viewsub.html">View Submission</a></li>
     <li><a href="faq.html">FAQ</a>
-    </li> &nbsp &nbsp &nbsp
-      <li>                          <!--ADD SEACH ICON-->
-        <input type="text" placeholder="SEARCH" id="autocomplete-input" class="autocomplete gray-text center-right" > 
-                  </li>      
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
-    <li>                          <!--ADD SEACH ICON-->
-        <input type="text" placeholder="SEARCH" id="autocomplete-input" class="autocomplete gray-text center-right" > 
-                  </li>      
-        <li><a href="homepage.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
     <li><a href="abstractsub.html">Abstract Submission</a></li>
     <li><a href="projectsub.html">Project Submission</a></li>
     <li><a href="viewsub.html">View Submission</a></li>
-    <li><a href="aboutus.html">About us</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
     </div>
@@ -111,8 +81,6 @@ $result = $conn->query($sql);
   <div class="block">
     <div class="carousel carousel-slider">
       <a class="carousel-item" href="#"><img src="media/i1.jpg"></a>
-      <a class="carousel-item" href="#"><img src="media/2.jpg"></a>
-      <a class="carousel-item" href="#"><img src="media/o3.jpg"></a>
     </div>
   </div>
 
@@ -126,25 +94,38 @@ $result = $conn->query($sql);
               <i class="material-icons small white-text">label</i>
               <div class="white-text" style="margin: -35px 0 50px 50px;letter-spacing: 2px;font-family: 'Open Sans', sans-serif;"> 
               
-              <?="Name: " . $row["fname"]. "<br/> Email: " . $row["email"]. "<br/> Number: " . $row["contactno"]. "<br/> Branch:  ".$row["Branch"]."<br/> Year: " . $row["year"]. "<br/>"?><br><button class=" col s3 offset-s9 btn waves-effect waves-light" type="submit" name="action" data-toggle="modal" data-target="#myModal" >Details<i class="material-icons right">send</i></button><br>
-
-              </div>
+              <?="Problem Statement: " . $row["prob_stmt"]. "<br/><br/> Domain: " . $row["domain"]. "<br/> "?><br>
+			  
+<!--		 <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Details<i class="material-icons right">send</i></button></a><br> -->
+<ul class="collapsible popout">
+    <li>
+      <div class="collapsible-header black-text">Click here to read more</div>
+      <div class="collapsible-body"><span>
+	  <?="<b>  <i>Name of Group Members: </b>  </i>" . $row["fname"]. ", " . $row["sname"]. ", " . $row["tname"]. "<br/><br/>
+	<b>   <i>Email:</b>  </i>" . $row["femail"]. " , " . $row["semail"]. ", " . $row["temail"]. "<br/> <br>
+	<b> <i>Contact Number: </i> </b>" . $row["fcontactno"]. " , " . $row["scontactno"]. ", " . $row["tcontactno"]. "<br/> <br>
+	<b> <i>	Problem Statement: </i></b>"  . $row["prob_stmt"]. "  <br> <br>
+	<b> <i>	Domain:  </i></b>" . $row["domain"]. "  <br> <br>
+	<b> <i>	Abstract:  </i></b>" . $row["abs"]. " <br>
+		
+		
+		"?>
+	  
+	  
+	  
+	  <br>
+	  
+	  
+	  
+	  </span></div>
+    </li>
+    </ul>             </div>
               </div>
             </div>
         <?php }?>
 
 
-        <?php while ( $row = $result->fetch_assoc()) { ?>
-            <div class="col s12 m6" style="padding:0 20px 0 15px; margin-top: 40px;">
-              <div class="card-panel" style="background:url(media/check.jpg);outline:1px solid white;outline-offset:-4px;">
-              <div class="white-text" style="margin: -35px 0 50px 50px;letter-spacing: 2px;font-family: 'Open Sans', sans-serif;"> 
-
-              <?="Name: " . $row["fname"]. "<br/> Email: " . $row["email"]. "<br/> Number: " . $row["contactno"]. "<br/> Branch:  ".$row["Branch"]."<br/> Year: " . $row["year"]. "<br/>"?><br><button class=" col s3 offset-s9 btn waves-effect waves-light" type="submit" name="action" data-toggle="modal" data-target="#myModal" >Details<i class="material-icons right">send</i></button><br>
-
-              </div>
-              </div>
-            </div>
-       <?php }?>
+      
   </div>
   </div>
    <!--footer-->
@@ -174,7 +155,21 @@ $result = $conn->query($sql);
       </div>
     </div>
   </footer>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+  });
 
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });        
+		  </script>
 
 
 </body>
