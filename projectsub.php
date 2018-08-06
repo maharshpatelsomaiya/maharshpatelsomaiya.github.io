@@ -1,21 +1,22 @@
 <?php
-    $conn = new mysqli("localhost", "root", "", "learnanintern");
-    $fname=$_GET['fname'];
-	$sname=$_GET['sname'];
-	$tname=$_GET['tname'];
-    $femail=$_GET['femail'];
-	$semail=$_GET['semail'];
-	$temail=$_GET['temail'];
-	$telephone1=$_GET['telephone1'];
-	$telephone2=$_GET['telephone2'];
-	$telephone3=$_GET['telephone3'];
-    $prob_stmt=$_GET['prob_stmt'];
-	$accyear=$_GET['accyear'];
-	$under=$_GET['under'];
-    $facname=$_GET['facname'];
-	$targetfolder = "testupload/";
-    $targetfolder = $targetfolder . basename( $_FILES['file']['name']) ;
-
+    $conn = new mysqli("localhost", "root", "", "example");
+    $fname=$_POST['fname'];
+	$sname=$_POST['sname'];
+	$tname=$_POST['tname'];
+    $femail=$_POST['femail'];
+	$semail=$_POST['semail'];
+	$temail=$_POST['temail'];
+	$telephone1=$_POST['telephone1'];
+	$telephone2=$_POST['telephone2'];
+	$telephone3=$_POST['telephone3'];
+    $prob_stmt=$_POST['prob_stmt'];
+	$accyear=$_POST['accyear'];
+	$under=$_POST['under'];
+    $facname=$_POST['facname'];
+    $targetfolder = "testupload/";
+    $targetfile=basename( $_FILES["file"]["name"]);
+    $tmp=basename( $_FILES["file"]["tmp_name"]); 
+    $targetfolder=$targetfolder.$targetfile;
     if ($conn->connect_error) {
    	 die("Connection failed: " . $conn->connect_error);
     }
@@ -33,15 +34,15 @@
 									 '".$prob_stmt."',
 								  '".$accyear."',
 								  '".$under."',
-								  '".$facname"',
-								  '".$file."' );";
+								  '".$facname."',
+								  '".$targetfolder.$targetfile."' );";
     if ($conn->query($sql) === TRUE) {
     	echo '<script language="javascript">';
 echo 'alert("message successfully sent")';
 echo '</script>';
-if(move_uploaded_file($_FILES['file']['tmp_name'], $targetfolder))
+if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetfolder))
  {
- echo "The file ". basename( $_FILES['file']['name']). " is uploaded";
+ echo "The file ". basename( $_FILES['file']['name']). " is uploaded".$targetfolder;
  }
  else {
  

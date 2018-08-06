@@ -1,5 +1,5 @@
 <?php
-    $conn = new mysqli("localhost", "root", "", "learnanintern");
+    $conn = new mysqli("localhost", "root", "", "example");
     $fname=$_GET['fname'];
     $email=$_GET['email'];
 	$contactno=$_GET['contactno'];

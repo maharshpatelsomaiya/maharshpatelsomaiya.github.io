@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,14 +126,9 @@
           <label for="prob_stmt">Enter your problem statement</label>
                </div>
 			   
-			   <div class="input-field col s12 m4 white-text">
-			    <select id="accyear" name="accyear">
-      <option value="" disabled selected>Choose your academic year</option>
-      <option value="1">2017-2018</option>
-      <option value="2">2018-2019</option>
-      <option value="3" disabled >2019-2020</option>
-    </select>
-    <label>Choose your academic year</label>
+			    <div class = "input-field col s12 m4">
+                 <input id="accyear" name="accyear" type="text" class="validate white-text " data-length="120">
+            <label>Enter your academic year</label>
 			   </div>
 			 
             </div>
@@ -180,7 +176,7 @@
         <input type="file">
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate" type="text" placeholder="Upload the pdf" name="file" id="file">
+        <input class="file-path validate" type="file" placeholder="Upload the pdf" name="file" id="file">
       </div>
     </div>
   	
