@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="LearnAnIntern" content="Project Management; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Welcome to LearnAnIntern</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  
+</head>
+<body class="#004d40 teal darken-4">
+
+<!--Navigation bar -->
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Home</a></li>
+		<li><a href="abstractsub.html">Abstract Submission</a></li>
+		<li><a href="projectsub.html">Project Submission</a></li>
+		<li><a href="viewsub.html">View Submission</a></li>
+		<li><a href="faq.html">FAQ</a></li> &nbsp &nbsp &nbsp
+	  </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+	    <li><a href="index.html">Home</a></li>
+		<li><a href="abstractsub.html">Abstract Submission</a></li>
+		<li><a href="projectsub.html">Project Submission</a></li>
+		<li><a href="viewsub.html">View Submission</a></li>
+		<li><a href="faq.html">FAQ</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+  <!--End navigation bar-->
+
+<!--Code for form-->
+  <br> <br>
+  <div class="container #263238 blue-grey darken-4 white-text z-depth-5" >
+  <div class = "row">
+         <form class = "col s12" action="internship_form.php" method="get">
+            <div class = "row"> 
+			<h4><center><b> <i> Kindly upload your internship details </b> </i></h4> 
+			<center><p> <i> <b>Kindly note: </b> Details once uploaded, can not be deleted or modified. </i> </p>
+            
+               <div class = "input-field col s12 m6 ">
+                   <i class = "material-icons prefix">account_circle</i>
+                  <input id = "fname"  name="fname" type = "text" class = "active validate white-text " required />
+                  <label for = "fname">Enter the full name of faculty member</label>
+                </div>
+
+			  
+			   
+               
+		<div class="input-field col s12 m6 " >
+    <select id="under" name="under"  class="browser-default">
+   <option value="" disabled selected>Department of faculty member</option>     
+	 <optgroup label="Departmental" selected>
+	 
+        <option value="1" >IT</option>
+        <option value="2">CS</option>
+		<option value="3">EXTC</option>
+        <option value="4">ETRX</option>
+		    <option value="5">BSH</option>
+			    <option value="4">Institutional</option>
+      </optgroup>
+    
+    </select>
+  
+  </div></div>
+           
+		      
+			  <div class = "row">
+               <div class = "input-field col s12 m6">
+                  <i class = "material-icons prefix">mode_edit</i>
+                 <input id="phno" name="phno" type="tel" class="white-text " data-length="10" required> 
+          <label for="phno">Phone no.</label>
+               </div>
+			   
+			   <div class = "input-field col s12 m6">
+                  <i class = "material-icons prefix">mode_edit</i>
+                 <input id="emailid" name="emailid" type="email" class="white-text " required>
+          <label for="emailid">Email id <label>
+               </div>
+			    
+            </div>
+            <div class = "row">
+			
+             <div class = "input-field col s12 m6">
+			<label>Internship Type : </label>
+			  <div class = "input-field col s12 m6">
+	<label>
+        <input name="internship_type" type="radio" checked />
+        <span>Inhouse</span>
+      </label> </div>
+	  
+	    <div class = "input-field col s12 m6">
+     <label>
+        <input name="internship_type" type="radio"  value = "other"/>
+        <span>Outhouse</span><input style="display:none;" type="text" name="otherAnswer" id="otherAnswer"/>
+		
+      </label> </div>
+    
+  
+
+
+               </div>
+			   
+			   <div class = "input-field col s12 m6">
+                  <i class = "material-icons prefix">mode_edit</i>
+                 <input id="internship_no" name="internship_no" type="text" class="white-text " required>
+          <label for="internship_no">Enter the number of internships required</label>
+               </div>
+			   
+			   
+            </div>
+            
+             <div class = "row">
+               <div class = "input-field col s12 m6">
+                  <i class = "material-icons prefix">mode_edit</i>
+                 <input id="Domain" name="Domain" type="text" class="white-text " data-length="120" required> 
+          <label for="Domain">Domain</label>
+               </div>
+			   
+			   <div class = "input-field col s12 m6">
+                  <i class = "material-icons prefix">mode_edit</i>
+                 <input id="who_can_apply" name="who_can_apply" type="text" class="white-text " required>
+          <label for="who_can_apply">Who can apply <label>
+               </div>
+			    
+            </div>
+			
+			<div class = "row">	
+			<div class = "input-field col s12 m12">
+                  <i class = "material-icons prefix">mode_edit</i>
+                           <label for="internship_stmt">Enter details about the internship</label>
+		  <textarea id="internship_stmt" name="internship_stmt" class="materialize-textarea white-text" data-length="1200" ></textarea>
+               </div>
+			<div class = "input-field col s12 m12">
+                  <i class = "material-icons prefix">mode_edit</i>
+                 <input id="Perks" name="Perks" type="text" class="white-text " required>
+          <label for="Perks">Perks offered to the students <label>
+               </div></div>
+  <center> <button class="btn pulse waves-effect waves-light brown" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+  </button>
+            
+                       
+         </form>       
+        <br> <br>
+
+		 </div>
+      </div>
+  
+
+  
+  </div>
+  <br> <br>
+  
+  
+  <!--End code for form-->
+  <!--footer-->
+  <!--footer-->
+  <footer class="page-footer #263238 blue-grey darken-4">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h4 class="white-text"><b> <i>KSIEIT-LearnAnIntern</b></i></h4>
+          <p class="grey-text text-lighten-4">K. J. Somaiya Institute of Engineering and Information Technology abbreviated as KJSIEIT was established by the Somaiya Trust in the 2001, at Ayurvihar campus, Sion, Mumbai, India. The institute was set up to impart education in the field of Information Technology and allied branches of Engineering and Technology .</p>
+
+
+        </div>
+        <div class="col l3 s12 right">
+          <h4 class="white-text"><b> <i>Contact us </b> </i></h4>
+          <ul>
+            <li><a class="white-text" href="#!"><b> Contact number: </b> <br>022 2406 1408 </a></li>
+            <li><a class="white-text" href="#!"><b> Address: </b> Somaiya Ayurvihar Complex, Eastern Express Highway, Near Everard Nagar, Sion East, Mumbai, Maharashtra 400022</a></li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">LearnAnIntern Team</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  
+<script>
+$(document).ready(function() {
+    
+});
+  
+  
+   $('#internship_stmt').val('');
+  M.textareaAutoResize($('#internship_stmt'));
+
+  
+   $(document).ready(function() {
+    $('input#prob_stmt, textarea#internship_stmt').characterCounter();
+ });
+ 
+ 
+  $(document).ready(function() {
+    $('input#internship_stmt_stmt, textarea#internship_stmt').characterCounter();
+  });
+
+</script>
+  </body>
+</html>

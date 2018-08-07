@@ -1,1 +1,4 @@
 [0506/224415.676:ERROR:settings.cc(266)] Settings version is not 1
+[0717/202426.694:ERROR:persistent_memory_allocator.cc(777)] Corruption detected in shared-memory segment.
+[0718/221855.458:ERROR:persistent_memory_allocator.cc(777)] Corruption detected in shared-memory segment.
+[0721/154620.816:ERROR:persistent_memory_allocator.cc(777)] Corruption detected in shared-memory segment.
